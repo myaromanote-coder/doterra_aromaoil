@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#FAF8F4"/>
+  <circle cx="256" cy="256" r="180" fill="#C8956C" opacity=".15"/>
+  <!-- Leaf -->
+  <path d="M256 120 C256 120 160 180 160 280 C160 340 200 380 256 390 C312 380 352 340 352 280 C352 180 256 120 256 120Z" fill="#6B8F71"/>
+  <path d="M256 150 C256 150 190 200 190 285 C190 335 220 365 256 375" fill="#8BAF8B" opacity=".5"/>
+  <!-- Drop center -->
+  <ellipse cx="256" cy="270" rx="36" ry="50" fill="#C8956C" opacity=".8"/>
+  <!-- Stem -->
+  <line x1="256" y1="380" x2="256" y2="420" stroke="#6B8F71" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2D4A3E">
+  <meta name="description" content="도테라 에센셜 오일 정보 & Q&A — my.aroma.note">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="아로마노트">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <title>my.aroma.note</title>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────── -->
+<header class="app-header">
+  <div class="header-content">
+    <div class="logo">
+      <span class="logo-icon">🌿</span>
+      <span class="logo-text">my<span class="dot">.</span>aroma<span class="dot">.</span>note</span>
+    </div>
+    <button class="header-search-btn" onclick="App.showPage('search')">🔍</button>
+  </div>
+</header>
+
+<main class="main-content">
+
+  <!-- ── 홈 ──────────────────────────────────────── -->
+  <section id="page-home" class="page">
+
+    <div class="hero">
+      <div class="hero-eyebrow">DOTERRA ESSENTIAL OILS</div>
+      <h1 class="hero-title">자연의 힘으로<br><em>일상을 바꾸다</em></h1>
+      <p class="hero-subtitle">63종 도테라 오일 정보와 실전 Q&A를<br>한 곳에서 만나보세요.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">63</span>
+          <span class="hero-stat-label">오일 종류</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-label">카테고리</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">Q&A</span>
+          <span class="hero-stat-label">커뮤니티</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-header" style="margin-top:20px">
+      <span class="sec-title">☀️ 오늘의 오일</span>
+    </div>
+    <div id="oil-of-day"></div>
+
+    <div class="sec-header">
+      <span class="sec-title">카테고리</span>
+    </div>
+    <div class="cat-cards">
+      <div class="cat-card" onclick="App.showPage('oils');App.setCat('single')">
+        <span class="cat-card-emoji">🌱</span>
+        <div class="cat-card-name">단일 오일</div>
+        <div class="cat-card-count">38종</div>
+      </div>
+      <div class="cat-card" onclick="App.showPage('oils');App.setCat('blend')">
+        <span class="cat-card-emoji">✨</span>
+        <div class="cat-card-name">블렌드</div>
+        <div class="cat-card-count">19종</div>
+      </div>
+      <div class="cat-card" onclick="App.showPage('oils');App.setCat('mood')">
+        <span class="cat-card-emoji">☀️</span>
+        <div class="cat-card-name">기분조절</div>
+        <div class="cat-card-count">4종</div>
+      </div>
+      <div class="cat-card" onclick="App.showPage('oils');App.setCat('emotional')">
+        <span class="cat-card-emoji">💜</span>
+        <div class="cat-card-name">감정조절</div>
+        <div class="cat-card-count">6종</div>
+      </div>
+    </div>
+
+    <div class="sec-header">
+      <span class="sec-title">인기 오일</span>
+      <button class="sec-link" onclick="App.showPage('oils')">전체 보기 ›</button>
+    </div>
+    <div class="featured-scroll" id="featured-scroll"></div>
+
+    <div class="sec-header">
+      <span class="sec-title">최근 Q&A</span>
+      <button class="sec-link" onclick="App.showPage('qa')">전체 보기 ›</button>
+    </div>
+    <div id="recent-qa"></div>
+
+  </section>
+
+  <!-- ── 오일 목록 ─────────────────────────────────── -->
+  <section id="page-oils" class="page">
+    <h1 class="page-title">오일 가이드</h1>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-bar" type="search" id="oils-search"
+        placeholder="오일 이름, 효능, 증상으로 검색..."
+        oninput="App.doOilsSearch(this.value)">
+    </div>
+
+    <div class="cat-tabs" id="cat-tabs"></div>
+    <div class="tag-row" id="tag-row"></div>
+    <div class="oils-list" id="oils-list"></div>
+  </section>
+
+  <!-- ── Q&A ──────────────────────────────────────── -->
+  <section id="page-qa" class="page">
+    <div class="qa-top-row">
+      <h1 class="page-title" style="margin-bottom:0">Q&A</h1>
+      <button class="write-btn" onclick="App.openWriteQA()">+ 질문하기</button>
+    </div>
+    <div id="qa-filter-label"></div>
+    <div id="qa-list"></div>
+  </section>
+
+  <!-- ── 검색 ─────────────────────────────────────── -->
+  <section id="page-search" class="page">
+    <div class="search-header">
+      <h1 class="page-title">검색</h1>
+      <p>오일 이름 · 증상 · 효능 · 블렌딩 조합</p>
+    </div>
+
+    <div class="search-bar-row">
+      <div class="search-wrap" style="flex:1;margin-bottom:0">
+        <span class="search-icon">🔍</span>
+        <input id="search-input" class="search-bar" type="search"
+          placeholder="검색어를 입력하세요..."
+          onkeydown="if(event.key==='Enter')App.doSearch()">
+      </div>
+      <button class="search-submit-btn" onclick="App.doSearch()">검색</button>
+    </div>
+
+    <div class="symptom-section">
+      <div class="symptom-title">증상으로 찾기</div>
+      <div class="symptom-grid">
+        <button class="symptom-btn" onclick="App.searchSymptom('수면')">😴 수면</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('두통')">🤕 두통</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('소화')">🫃 소화</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('스트레스')">😮‍💨 스트레스</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('면역')">🛡️ 면역</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('피부')">✨ 피부</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('근육통')">💪 근육통</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('집중력')">🧠 집중력</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('호흡기')">💨 호흡기</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('여성건강')">🌸 여성건강</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('항염')">🔥 항염</button>
+        <button class="symptom-btn" onclick="App.searchSymptom('블렌딩')">🧪 블렌딩</button>
+      </div>
+    </div>
+
+    <div id="search-results">
+      <div class="empty-state">오일 이름, 증상, 효능으로 검색하거나<br>위 버튼을 눌러 바로 찾아보세요.</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── 하단 네비게이션 ──────────────────────────── -->
+<nav class="bottom-nav">
+  <button class="nav-item active" data-page="home" onclick="App.showPage('home')">
+    <span class="nav-icon">🏠</span><span>홈</span>
+  </button>
+  <button class="nav-item" data-page="oils" onclick="App.showPage('oils')">
+    <span class="nav-icon">🌿</span><span>오일</span>
+  </button>
+  <button class="nav-item" data-page="qa" onclick="App.showPage('qa')">
+    <span class="nav-icon">💬</span><span>Q&A</span>
+  </button>
+  <button class="nav-item" data-page="search" onclick="App.showPage('search')">
+    <span class="nav-icon">🔍</span><span>검색</span>
+  </button>
+</nav>
+
+<!-- ── 모달 ────────────────────────────────────── -->
+<div id="oil-modal" class="modal">
+  <div class="modal-sheet"><div id="oil-modal-content"></div></div>
+</div>
+<div id="qa-modal" class="modal">
+  <div class="modal-sheet"><div id="qa-modal-content"></div></div>
+</div>
+<div id="write-modal" class="modal">
+  <div class="modal-sheet"><div id="write-modal-content"></div></div>
+</div>
+
+<script src="js/oils-data.js"></script>
+<script src="js/qa.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
