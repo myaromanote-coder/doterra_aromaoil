@@ -251,48 +251,45 @@ const App = (() => {
 
       <div class="modal-body">
         <span class="modal-cat-badge" style="background:${cat.color}18;color:${cat.color}">
-          ${cat.emoji||''} ${cat.label||''}
+          ${cat.label||''}
         </span>
 
-        <div class="info-chips">
-          ${oil.origin     ? `<div class="info-chip">🌍 <strong>${oil.origin}</strong></div>` : ''}
-          ${oil.extraction ? `<div class="info-chip">🔬 <strong>${oil.extraction}</strong></div>` : ''}
-          ${oil.plant      ? `<div class="info-chip">🌿 <strong>${oil.plant}</strong></div>` : ''}
-          ${oil.scent      ? `<div class="info-chip">👃 ${oil.scent}</div>` : ''}
+        <div class="info-row">
+          ${oil.origin     ? `<div class="info-chip"><span class="info-chip-label">원산지</span>${oil.origin}</div>` : ''}
+          ${oil.extraction ? `<div class="info-chip"><span class="info-chip-label">추출법</span>${oil.extraction}</div>` : ''}
+          ${oil.plant      ? `<div class="info-chip"><span class="info-chip-label">원료</span>${oil.plant}</div>` : ''}
+          ${oil.scent      ? `<div class="info-chip"><span class="info-chip-label">향</span>${oil.scent}</div>` : ''}
         </div>
 
-        <div class="detail-block">
-          <div class="detail-block-title">소개</div>
-          <p>${oil.description}</p>
+        <div class="detail-section">
+          <div class="detail-label">소개</div>
+          <p class="detail-text">${oil.description}</p>
         </div>
 
         ${oil.ingredients?.length ? `
-        <div class="detail-block">
-          <div class="detail-block-title">주요 성분</div>
-          <div class="ingredient-chips">
+        <div class="detail-section">
+          <div class="detail-label">주요 성분</div>
+          <div class="chip-row">
             ${oil.ingredients.map(i=>`<span class="ingredient-chip">${i}</span>`).join('')}
           </div>
         </div>` : ''}
 
-        <div class="detail-block">
-          <div class="detail-block-title">주요 효능</div>
-          <div class="benefit-grid">
+        <div class="detail-section">
+          <div class="detail-label">주요 효능</div>
+          <ul class="benefit-list">
             ${(oil.benefits||[]).map(b=>`
-              <div class="benefit-item">
-                <span class="benefit-check">✓</span>
-                <span>${b}</span>
-              </div>`).join('')}
-          </div>
+              <li><span class="b-dot"></span><span>${b}</span></li>`).join('')}
+          </ul>
         </div>
 
         ${usageMethods.length ? `
-        <div class="detail-block">
-          <div class="detail-block-title">사용 방법</div>
+        <div class="detail-section">
+          <div class="detail-label">사용 방법</div>
           <div class="usage-tabs" id="usage-tabs-${id}">
             ${usageMethods.map((m,i)=>`
               <button class="usage-tab ${i===activeIdx?'active':''}"
                 onclick="App.switchUsageTab(${id},${i})">
-                ${m.icon} ${m.label}
+                ${m.label}
               </button>`).join('')}
           </div>
           <div class="usage-content" id="usage-content-${id}">
@@ -301,21 +298,21 @@ const App = (() => {
         </div>` : ''}
 
         ${oil.blendsWith?.length ? `
-        <div class="detail-block">
-          <div class="detail-block-title">잘 어울리는 오일</div>
-          <div class="blend-chips">
+        <div class="detail-section">
+          <div class="detail-label">잘 어울리는 오일</div>
+          <div class="chip-row">
             ${oil.blendsWith.map(b=>`<span class="blend-chip">${b}</span>`).join('')}
           </div>
         </div>` : ''}
 
         ${oil.precautions ? `
-        <div class="detail-block caution-block">
-          <div class="detail-block-title">⚠️ 주의사항</div>
-          <p>${oil.precautions}</p>
+        <div class="detail-section caution-box">
+          <div class="detail-label">주의사항</div>
+          <p class="detail-text">${oil.precautions}</p>
         </div>` : ''}
 
         <button class="qa-link-btn" onclick="App.goToQAWithOil(${oil.id})">
-          💬 이 오일 Q&A 보기
+          이 오일 Q&A 보기
         </button>
       </div>`;
 
