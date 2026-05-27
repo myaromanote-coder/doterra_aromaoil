@@ -307,7 +307,7 @@ const OILS_DATA = [
     tags: ["혈액순환", "근육통", "소화", "금연", "오일흡수"]
   },
   {
-    id: 20, nameKr: "카다몬", nameEn: "Cardamom", category: "single", plantType: "spice",
+    id: 20, nameKr: "카다몬", nameEn: "Cardamom", category: "single", plantType: "spice", productImage: "images/oils/cardamom.jpg",
     color: "#7BAF6E", emoji: "🌿",
     origin: "과테말라", extraction: "수증기 증류", plant: "씨앗",
     scent: "달콤한, 향신료, 플로럴",
@@ -853,7 +853,7 @@ const OILS_DATA = [
     tags: ["방충제", "모기퇴치", "야외활동", "천연", "보호"]
   },
   {
-    id: 115, nameKr: "HD 클리어", nameEn: "HD Clear", category: "blend", plantType: "blend",
+    id: 115, nameKr: "HD 클리어", nameEn: "HD Clear", category: "blend", plantType: "blend", productImage: "images/oils/hd-clear.jpg",
     color: "#E0F0FF", emoji: "✨",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "청량한, 허브, 신선한",
@@ -870,7 +870,7 @@ const OILS_DATA = [
     tags: ["여드름", "피부정화", "모공", "피지조절", "트러블"]
   },
   {
-    id: 116, nameKr: "이모탈", nameEn: "Immortelle", category: "blend", plantType: "blend",
+    id: 116, nameKr: "이모탈", nameEn: "Immortelle", category: "blend", plantType: "blend", productImage: "images/oils/immortelle.jpg",
     color: "#FFD700", emoji: "👑",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "플로럴, 우디, 허브",
