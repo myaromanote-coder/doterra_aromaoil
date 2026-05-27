@@ -435,7 +435,7 @@ const OILS_DATA = [
     tags: ["자신감", "우울감", "로맨틱", "피부탄력", "산후"]
   },
   {
-    id: 28, nameKr: "로즈 페탈", nameEn: "Rose Petal", category: "single", plantType: "flower",
+    id: 28, nameKr: "로즈페탈", nameEn: "Rose Petal", category: "single", plantType: "flower",
     color: "#E8537A", emoji: "🌹",
     origin: "불가리아", extraction: "수증기 증류", plant: "꽃잎",
     scent: "달콤한, 고귀한 플로럴, 깊은",
