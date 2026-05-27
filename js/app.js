@@ -215,35 +215,43 @@ const App = (() => {
 
     const activeIdx = Math.min(activeUsageTab[id], usageMethods.length - 1);
 
+    const backBtn = `
+      <button class="modal-back-btn" onclick="App.closeModal('oil-modal')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>`;
+
     const hasProduct = !!oil.productImage;
     const hasPlant   = !!oil.plantImageUrl;
     const heroHtml = (hasProduct || hasPlant) ? `
       <div class="modal-hero-photos">
+        ${backBtn}
+        <!-- 오일 병: 넓게, 흰 배경 -->
         <div class="modal-hero-product-wrap">
           ${hasProduct
-            ? `<img class="modal-hero-product-img" src="${oil.productImage}" alt="${oil.nameKr}"
-                onerror="this.style.display='none'">`
-            : `<span style="font-size:70px">${oil.emoji}</span>`}
+            ? `<img class="modal-hero-product-img" src="${oil.productImage}" alt="${oil.nameKr}" onerror="this.style.display='none'">`
+            : `<div class="plant-${oil.plantType||'blend'}" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center"></div>`}
         </div>
+        <!-- 식물: 좁게, 사진 -->
         ${hasPlant ? `
         <div class="modal-hero-plant-wrap">
-          <img class="modal-hero-plant-img" src="${oil.plantImageUrl}" alt="${oil.nameKr} 식물"
-            onerror="this.closest('.modal-hero-plant-wrap').style.display='none'">
+          <img class="modal-hero-plant-img" src="${oil.plantImageUrl}" alt="식물"
+            onerror="this.closest('.modal-hero-plant-wrap').remove()">
         </div>` : ''}
-        <div class="modal-hero-info-bar">
+        <div class="modal-hero-gradient"></div>
+        <div class="modal-hero-text">
           <div class="modal-hero-kr">${oil.nameKr}</div>
           <div class="modal-hero-en">${oil.nameEn}</div>
         </div>
-        <button class="modal-close" onclick="App.closeModal('oil-modal')">✕</button>
       </div>` : `
-      <div class="modal-hero plant-${oil.plantType||'blend'}">
-        <span class="modal-hero-emoji">${oil.emoji}</span>
-        <div class="modal-hero-overlay"></div>
-        <div class="modal-hero-info">
+      <div class="modal-hero-gradient-only plant-${oil.plantType||'blend'}">
+        ${backBtn}
+        <div class="modal-hero-gradient"></div>
+        <div class="modal-hero-text">
           <div class="modal-hero-kr">${oil.nameKr}</div>
           <div class="modal-hero-en">${oil.nameEn}</div>
         </div>
-        <button class="modal-close" onclick="App.closeModal('oil-modal')">✕</button>
       </div>`;
 
     content.innerHTML = `
