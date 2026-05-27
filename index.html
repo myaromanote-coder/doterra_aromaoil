@@ -44,13 +44,24 @@
   <section id="page-home" class="page" style="padding-top:0">
 
     <div class="hero">
-      <div class="hero-eyebrow">dōTERRA Essential Oils</div>
-      <h1 class="hero-title">자연이 전하는<br><em>순수한 향기</em></h1>
-      <p class="hero-sub">도테라 에센셜 오일의 모든 정보와<br>실전 노하우를 한 곳에서</p>
-      <div class="hero-pills">
-        <span class="hero-pill"><strong>63</strong> 종의 오일</span>
-        <span class="hero-pill"><strong>4</strong> 카테고리</span>
-        <span class="hero-pill">Q&amp;A 커뮤니티</span>
+      <div class="hero-inner">
+        <div class="hero-label"><span></span>dōTERRA Essential Oils</div>
+        <h1 class="hero-title">자연이 전하는<br><em>순수한 향기</em></h1>
+        <p class="hero-sub">63종 도테라 오일 정보와 실전 Q&amp;A</p>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num">63</span>
+            <span class="hero-stat-label">종의 오일</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">4</span>
+            <span class="hero-stat-label">카테고리</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">Q&A</span>
+            <span class="hero-stat-label">커뮤니티</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -64,40 +75,40 @@
     </div>
     <div class="cat-grid">
       <div class="cat-card" onclick="App.showPage('oils');App.setCat('single')">
-        <div class="cat-card-icon" style="background:rgba(44,74,62,.1)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2C4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="cat-icon" style="background:var(--key-lt)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--key)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22C12 22 4 16 4 10C4 6.134 7.134 3 11 3C15.418 3 19 6.582 19 11C19 16 12 22 12 22Z"/><line x1="12" y1="22" x2="12" y2="12"/>
           </svg>
         </div>
-        <div class="cat-card-name">단일 오일</div>
-        <div class="cat-card-count">38종</div>
+        <div class="cat-name">단일 오일</div>
+        <div class="cat-count">38종</div>
       </div>
       <div class="cat-card" onclick="App.showPage('oils');App.setCat('blend')">
-        <div class="cat-card-icon" style="background:rgba(168,130,10,.1)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8820A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/><path d="M8 12C8 9.79 9.79 8 12 8"/><path d="M16 12C16 14.21 14.21 16 12 16"/>
+        <div class="cat-icon" style="background:#FFF8E8">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B8920A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m8 0h3a2 2 0 0 0 2-2v-3"/>
           </svg>
         </div>
-        <div class="cat-card-name">블렌드</div>
-        <div class="cat-card-count">19종</div>
+        <div class="cat-name">블렌드</div>
+        <div class="cat-count">19종</div>
       </div>
       <div class="cat-card" onclick="App.showPage('oils');App.setCat('mood')">
-        <div class="cat-card-icon" style="background:rgba(122,158,138,.15)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A9E8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/><path d="M9 15C9 15 10 17 12 17C14 17 15 15 15 15"/><line x1="9" y1="10" x2="9" y2="10"/><line x1="15" y1="10" x2="15" y2="10"/>
+        <div class="cat-icon" style="background:#F0F8FF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5B8DB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
           </svg>
         </div>
-        <div class="cat-card-name">기분조절</div>
-        <div class="cat-card-count">4종</div>
+        <div class="cat-name">기분조절</div>
+        <div class="cat-count">4종</div>
       </div>
       <div class="cat-card" onclick="App.showPage('oils');App.setCat('emotional')">
-        <div class="cat-card-icon" style="background:rgba(160,112,128,.1)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A07080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="cat-icon" style="background:#F8F0FF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9070B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
         </div>
-        <div class="cat-card-name">감정조절</div>
-        <div class="cat-card-count">6종</div>
+        <div class="cat-name">감정조절</div>
+        <div class="cat-count">6종</div>
       </div>
     </div>
 
