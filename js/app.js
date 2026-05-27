@@ -34,17 +34,24 @@ const App = (() => {
     if (!el || !oil) return;
     const imgHtml = oil.productImage
       ? `<img class="ood-product-img" src="${oil.productImage}" alt="${oil.nameKr}">`
-      : `<span style="font-size:42px">${oil.emoji}</span>`;
+      : `<div class="oil-thumb-fallback plant-${oil.plantType||'blend'}">
+           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".4">
+             <path d="M12 22C12 22 4 16 4 10C4 6.134 7.134 3 11 3C15.418 3 19 6.582 19 11C19 16 12 22 12 22Z"/>
+             <line x1="12" y1="22" x2="12" y2="12"/>
+           </svg>
+         </div>`;
     el.innerHTML = `
       <div class="ood-card" onclick="App.openOilDetail(${oil.id})">
         <div class="ood-img-wrap">${imgHtml}</div>
         <div class="ood-info">
-          <div class="ood-label">오늘의 오일</div>
+          <div class="ood-label">Today's Oil</div>
           <div class="ood-name-kr">${oil.nameKr}</div>
           <div class="ood-name-en">${oil.nameEn}</div>
-          <div class="ood-desc">${oil.description.slice(0,65)}…</div>
+          <div class="ood-benefit-line">${(oil.benefits||[]).slice(0,2).join(' · ')}</div>
         </div>
-        <div class="ood-arrow">›</div>
+        <div class="ood-chevron">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
       </div>`;
   }
 
@@ -56,12 +63,17 @@ const App = (() => {
       const cat = CATEGORIES[oil.category] || {};
       const imgHtml = oil.productImage
         ? `<img class="feat-product-img" src="${oil.productImage}" alt="${oil.nameKr}">`
-        : `<span style="font-size:48px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))">${oil.emoji}</span>`;
+        : `<div class="feat-fallback plant-${oil.plantType||'blend'}" style="width:100%;height:100%">
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" opacity=".4" stroke-linecap="round">
+               <path d="M12 22C12 22 4 16 4 10C4 6.134 7.134 3 11 3C15.418 3 19 6.582 19 11C19 16 12 22 12 22Z"/>
+               <line x1="12" y1="22" x2="12" y2="12"/>
+             </svg>
+           </div>`;
       return `
         <div class="featured-card" onclick="App.openOilDetail(${oil.id})">
-          <div class="feat-img-wrap plant-${oil.plantType||'blend'}">${imgHtml}</div>
+          <div class="feat-img-wrap">${imgHtml}</div>
           <div class="featured-body">
-            <div class="featured-cat" style="color:${cat.color||'#888'}">${cat.label||''}</div>
+            <div class="featured-cat" style="color:${cat.color||'var(--ink3)'}">${cat.label||''}</div>
             <div class="featured-name-kr">${oil.nameKr}</div>
             <div class="featured-name-en">${oil.nameEn}</div>
           </div>
@@ -77,11 +89,10 @@ const App = (() => {
 
   function qaCardSmall(q) {
     return `
-      <div class="qa-preview-card" onclick="App.openQADetail(${q.id})">
-        <div class="qa-preview-title">${q.title}</div>
-        <div class="qa-preview-meta">
-          <span>💬 ${q.answers?.length||0}개</span>
-          <span>❤️ ${q.likes||0}</span>
+      <div class="qa-row" onclick="App.openQADetail(${q.id})">
+        <div class="qa-row-title">${q.title}</div>
+        <div class="qa-row-meta">
+          <span>답변 ${q.answers?.length||0}개</span>
           <span>${q.date}</span>
         </div>
       </div>`;
@@ -148,20 +159,27 @@ const App = (() => {
     const cat = CATEGORIES[oil.category] || {};
     const thumbHtml = oil.productImage
       ? `<img class="oil-thumb-img" src="${oil.productImage}" alt="${oil.nameKr}">`
-      : `<div class="oil-thumb-fallback plant-${oil.plantType||'blend'}"><span>${oil.emoji}</span></div>`;
+      : `<div class="oil-thumb-fallback plant-${oil.plantType||'blend'}">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity=".4">
+             <path d="M12 22C12 22 4 16 4 10C4 6.134 7.134 3 11 3C15.418 3 19 6.582 19 11C19 16 12 22 12 22Z"/>
+             <line x1="12" y1="22" x2="12" y2="12"/>
+           </svg>
+         </div>`;
     return `
       <div class="oil-card" onclick="App.openOilDetail(${oil.id})">
         <div class="oil-thumb-wrap">${thumbHtml}</div>
         <div class="oil-info">
           <div class="oil-info-top">
             <span class="oil-kr">${oil.nameKr}</span>
-            <span class="oil-cat-dot" style="background:${cat.color||'#888'}"></span>
+            <span class="oil-cat-label" style="background:${cat.color}18;color:${cat.color||'#888'}">${cat.label||''}</span>
           </div>
           <div class="oil-en">${oil.nameEn}</div>
           <div class="oil-benefit">${(oil.benefits||[]).slice(0,2).join(' · ')}</div>
-          <div class="oil-tags-row">${(oil.tags||[]).slice(0,3).map(t=>`<span class="oil-tag">#${t}</span>`).join('')}</div>
+          <div class="oil-tags-row">${(oil.tags||[]).slice(0,3).map(t=>`<span class="oil-tag">${t}</span>`).join('')}</div>
         </div>
-        <div class="oil-chevron">›</div>
+        <div class="oil-chevron">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
       </div>`;
   }
 
@@ -362,17 +380,17 @@ const App = (() => {
   function qaCard(q) {
     const oilTags = (q.oilIds||[]).map(id => {
       const oil = OILS_DATA.find(o => o.id === id);
-      return oil ? `<span class="qa-oil-tag" style="background:${oil.color}18;color:${oil.color}">${oil.emoji} ${oil.nameKr}</span>` : '';
+      return oil ? `<span class="qa-oil-tag" style="background:${oil.color}18;color:${oil.color}">${oil.nameKr}</span>` : '';
     }).join('');
     return `
       <div class="qa-card" onclick="App.openQADetail(${q.id})">
         <div class="qa-title">${q.title}</div>
         ${oilTags ? `<div class="qa-oil-tags">${oilTags}</div>` : ''}
         <div class="qa-footer">
-          <span>✍️ ${q.author}</span>
-          <span>📅 ${q.date}</span>
-          <span>💬 ${q.answers?.length||0}개</span>
-          <span>❤️ ${q.likes||0}</span>
+          <span>${q.author}</span>
+          <span>${q.date}</span>
+          <span>답변 ${q.answers?.length||0}개</span>
+          <span>추천 ${q.likes||0}</span>
         </div>
       </div>`;
   }
