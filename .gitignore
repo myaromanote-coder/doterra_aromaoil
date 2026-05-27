@@ -1,3 +1,4 @@
 .DS_Store
 *.zip
 download_images.py
+.env.local
