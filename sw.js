@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aroma-note-v4';
+const CACHE_NAME = 'aroma-note-v5';
 
 self.addEventListener('install', e => {
   self.skipWaiting();

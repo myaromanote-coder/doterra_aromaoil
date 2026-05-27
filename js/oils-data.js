@@ -4,7 +4,7 @@ const OILS_DATA = [
   // ───────────────────────────────────────────────
   {
     id: 1, nameKr: "라벤더", nameEn: "Lavender", category: "single",
-    plantType: "flower", color: "#9B7EC8", emoji: "💜",
+    plantType: "flower", productImage: "images/oils/lavender.jpg", plantImageUrl: "images/plants/lavender.jpg", color: "#9B7EC8", emoji: "💜",
     origin: "불가리아, 프랑스", extraction: "수증기 증류", plant: "꽃",
     scent: "플로럴, 허브, 청량한",
     description: "'오일의 어머니'라 불리는 가장 다재다능한 에센셜 오일입니다. 수천 년 역사를 가진 라벤더는 진정·이완·피부 케어 등 폭넓게 활용됩니다. 도테라 오일 중 가장 대표적이며 초보자에게도 추천되는 오일입니다.",
