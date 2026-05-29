@@ -415,8 +415,7 @@ const App = (() => {
 
     content.innerHTML = `
       <div class="qa-modal-hd">
-        <button class="modal-close" style="position:absolute;top:16px;right:16px;background:var(--cream2);color:var(--text)"
-          onclick="App.closeModal('qa-modal')">✕</button>
+        <button class="qa-modal-close-btn" onclick="App.closeModal('qa-modal')">✕</button>
         <h2>${q.title}</h2>
         ${oilTags ? `<div class="qa-oil-tags" style="margin-top:10px">${oilTags}</div>` : ''}
         <div class="qa-footer" style="margin-top:8px">
@@ -431,7 +430,7 @@ const App = (() => {
         <div class="answers-title">ANSWERS · ${q.answers?.length||0}</div>
         ${(q.answers||[]).map(a=>`
           <div class="answer-card">
-            <div class="answer-text">${a.content}</div>
+            <div class="answer-text">${a.content.replace(/\n/g,'<br>')}</div>
             <div class="answer-meta">
               <span>✍️ ${a.author}</span>
               <span>${a.date}</span>
@@ -479,8 +478,7 @@ const App = (() => {
     const oilOptions = OILS_DATA.map(o=>`<option value="${o.id}">${o.nameKr} (${o.nameEn})</option>`).join('');
     content.innerHTML = `
       <div class="write-modal-hd">
-        <button class="modal-close" style="position:absolute;top:16px;right:16px;background:var(--cream2);color:var(--text)"
-          onclick="App.closeModal('write-modal')">✕</button>
+        <button class="qa-modal-close-btn" onclick="App.closeModal('write-modal')">✕</button>
         <h2>질문하기</h2>
       </div>
       <div class="write-modal-body">
