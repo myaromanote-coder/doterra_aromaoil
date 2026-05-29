@@ -435,7 +435,7 @@ const OILS_DATA = [
     tags: ["자신감", "우울감", "로맨틱", "피부탄력", "산후"]
   },
   {
-    id: 28, nameKr: "로즈페탈", nameEn: "Rose Petal", category: "single", plantType: "flower",
+    id: 28, nameKr: "로즈페탈", nameEn: "Rose Petal", category: "single", plantType: "flower", productImage: "images/oils/rose-petal.jpg", plantImageUrl: "images/plants/rose-petal.jpg",
     color: "#E8537A", emoji: "🌹",
     origin: "불가리아", extraction: "수증기 증류", plant: "꽃잎",
     scent: "달콤한, 고귀한 플로럴, 깊은",
@@ -891,7 +891,7 @@ const OILS_DATA = [
   //  감정 관리 오일 (Emotional Aromatherapy)
   // ───────────────────────────────────────────────
   {
-    id: 201, nameKr: "모티베이트", nameEn: "Motivate", category: "emotional", plantType: "emotional",
+    id: 201, nameKr: "모티베이트", nameEn: "Motivate", category: "emotional", plantType: "emotional", productImage: "images/oils/motivate.jpg", plantImageUrl: "images/plants/motivate.jpg",
     color: "#FF8C42", emoji: "🔥",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "민트, 시트러스, 발랄한",
@@ -908,7 +908,7 @@ const OILS_DATA = [
     tags: ["자신감", "동기부여", "두려움극복", "긍정", "용기"]
   },
   {
-    id: 202, nameKr: "치어", nameEn: "Cheer", category: "emotional", plantType: "emotional",
+    id: 202, nameKr: "치어", nameEn: "Cheer", category: "emotional", plantType: "emotional", productImage: "images/oils/cheer.jpg", plantImageUrl: "images/plants/cheer.jpg",
     color: "#FFD700", emoji: "😊",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "달콤한, 시트러스, 밝은",
@@ -925,7 +925,7 @@ const OILS_DATA = [
     tags: ["행복감", "우울감", "기쁨", "긍정", "활력"]
   },
   {
-    id: 203, nameKr: "패션", nameEn: "Passion", category: "emotional", plantType: "emotional",
+    id: 203, nameKr: "패션", nameEn: "Passion", category: "emotional", plantType: "emotional", productImage: "images/oils/passion.jpg", plantImageUrl: "images/plants/passion.jpg",
     color: "#DC143C", emoji: "❤️",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "따뜻한, 향신료, 이국적인",
@@ -942,7 +942,7 @@ const OILS_DATA = [
     tags: ["열정", "창의성", "로맨틱", "의욕", "감각"]
   },
   {
-    id: 204, nameKr: "포기브", nameEn: "Forgive", category: "emotional", plantType: "emotional",
+    id: 204, nameKr: "포기브", nameEn: "Forgive", category: "emotional", plantType: "emotional", productImage: "images/oils/forgive.jpg", plantImageUrl: "images/plants/forgive.jpg",
     color: "#90EE90", emoji: "🕊️",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "신선한, 우디, 허브",
@@ -959,7 +959,7 @@ const OILS_DATA = [
     tags: ["용서", "내려놓기", "분노완화", "마음의평화", "감정치유"]
   },
   {
-    id: 205, nameKr: "콘솔", nameEn: "Console", category: "emotional", plantType: "emotional",
+    id: 205, nameKr: "콘솔", nameEn: "Console", category: "emotional", plantType: "emotional", productImage: "images/oils/console.jpg", plantImageUrl: "images/plants/console.jpg",
     color: "#9370DB", emoji: "💜",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "플로럴, 허브, 따뜻한",
@@ -1010,7 +1010,7 @@ const OILS_DATA = [
     tags: ["스트레스", "불안완화", "마음안정", "적응력", "회복력"]
   },
   {
-    id: 208, nameKr: "클라리칼름", nameEn: "ClaryCalm", category: "blend", plantType: "blend",
+    id: 208, nameKr: "클래리캄", nameEn: "ClaryCalm", category: "blend", plantType: "blend", productImage: "images/oils/clarycalm.jpg", plantImageUrl: "images/plants/clarycalm.jpg",
     color: "#DA70D6", emoji: "🌸",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "플로럴, 허브, 따뜻한",
@@ -1044,7 +1044,7 @@ const OILS_DATA = [
     tags: ["불안완화", "내면의평화", "과민반응", "안정감", "공황완화"]
   },
   {
-    id: 209, nameKr: "위스퍼", nameEn: "Whisper", category: "blend", plantType: "blend",
+    id: 209, nameKr: "위스퍼터치", nameEn: "Whisper", category: "blend", plantType: "blend", productImage: "images/oils/whisper.jpg", plantImageUrl: "images/plants/whisper.jpg",
     color: "#F5CBA7", emoji: "🌺",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "따뜻한, 달콤한, 이국적인",
