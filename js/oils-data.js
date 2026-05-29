@@ -83,7 +83,7 @@ const OILS_DATA = [
     tags: ["피부", "명상", "노화방지", "면역", "세포재생"], featured: true
   },
   {
-    id: 6, nameKr: "멜라루카", nameEn: "Melaleuca (Tea Tree)", category: "single", plantType: "leaf",
+    id: 6, nameKr: "티트리", nameEn: "Melaleuca (Tea Tree)", category: "single", plantType: "leaf", productImage: "images/oils/melaleuca.jpg", plantImageUrl: "images/plants/melaleuca.jpg",
     color: "#6BAF8C", emoji: "🌱",
     origin: "호주", extraction: "수증기 증류", plant: "잎",
     scent: "신선한, 약초향, 청결한",
@@ -419,7 +419,7 @@ const OILS_DATA = [
     tags: ["진정", "어린이", "수면", "피부알레르기", "습진"]
   },
   {
-    id: 27, nameKr: "재스민", nameEn: "Jasmine", category: "single", plantType: "flower",
+    id: 27, nameKr: "자스민", nameEn: "Jasmine", category: "single", plantType: "flower", productImage: "images/oils/jasmine.jpg", plantImageUrl: "images/plants/jasmine.jpg",
     color: "#FFF0D0", emoji: "🌸",
     origin: "인도", extraction: "용매 추출", plant: "꽃",
     scent: "달콤한, 강렬한 플로럴, 이국적인",
@@ -666,7 +666,7 @@ const OILS_DATA = [
     tags: ["소화", "복부팽만", "메스꺼움", "위건강", "장건강"], featured: true
   },
   {
-    id: 104, nameKr: "브리드", nameEn: "Breathe", category: "blend", plantType: "blend",
+    id: 104, nameKr: "이지에어", nameEn: "Breathe", category: "blend", plantType: "blend", productImage: "images/oils/breathe.jpg", plantImageUrl: "images/plants/breathe.jpg",
     color: "#00BCD4", emoji: "💨",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "청량한, 민트, 유칼립투스향",
@@ -819,7 +819,7 @@ const OILS_DATA = [
     tags: ["기분전환", "에너지", "시트러스", "스트레스", "활력"]
   },
   {
-    id: 113, nameKr: "슬림 앤 새시", nameEn: "Slim & Sassy", category: "blend", plantType: "blend",
+    id: 113, nameKr: "메타파워", nameEn: "Slim & Sassy", category: "blend", plantType: "blend", productImage: "images/oils/slim-sassy.jpg", plantImageUrl: "images/plants/slim-sassy.jpg",
     color: "#98FB98", emoji: "💚",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "민트, 시트러스, 향신료",
