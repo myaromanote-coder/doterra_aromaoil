@@ -717,7 +717,7 @@ const OILS_DATA = [
     tags: ["수면", "이완", "긴장완화", "불안", "스트레스"], featured: true
   },
   {
-    id: 107, nameKr: "엘리베이트에센스", nameEn: "Elevation", category: "mood", plantType: "mood",
+    id: 107, nameKr: "엘리베이트에센스", nameEn: "Elevation", category: "mood", plantType: "mood", productImage: "images/oils/elevation.jpg",
     color: "#FFD700", emoji: "☀️",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "플로럴, 시트러스, 달콤한",
