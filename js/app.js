@@ -319,6 +319,41 @@ const App = (() => {
           <p class="detail-text">${oil.precautions}</p>
         </div>` : ''}
 
+        ${(() => {
+          const recipes = typeof getRecipesByOilId === 'function' ? getRecipesByOilId(oil.id) : [];
+          if (!recipes.length) return '';
+          return `
+        <div class="detail-section">
+          <div class="detail-label">아로마 레시피</div>
+          <div class="recipe-list" id="recipe-list-${id}">
+            ${recipes.map(r => `
+              <div class="recipe-card" onclick="App.toggleRecipe(${r.id}, ${id})">
+                <div class="recipe-card-top">
+                  <span class="recipe-type-badge recipe-type-${r.type}">${RECIPE_TYPES[r.type]?.label || r.type}</span>
+                  <span class="recipe-name">${r.name}</span>
+                  <span class="recipe-chevron" id="rc-chev-${r.id}-${id}">+</span>
+                </div>
+                <div class="recipe-detail" id="rc-detail-${r.id}-${id}" style="display:none">
+                  <div class="recipe-ingredients">
+                    ${r.ingredients.map(i => `
+                      <div class="recipe-ingredient">
+                        <span class="ri-name">${i.nameKr}</span>
+                        <span class="ri-amount">${i.amount}</span>
+                      </div>`).join('')}
+                  </div>
+                  <div class="recipe-how">
+                    <div class="recipe-how-label">만드는 방법</div>
+                    <p>${r.instructions}</p>
+                  </div>
+                  <div class="recipe-benefits">
+                    ${r.benefits.map(b => `<span class="recipe-benefit-tag">${b}</span>`).join('')}
+                  </div>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>`;
+        })()}
+
         <button class="qa-link-btn" onclick="App.goToQAWithOil(${oil.id})">
           이 오일 Q&A 보기
         </button>
@@ -575,8 +610,17 @@ const App = (() => {
       ['oil-modal','qa-modal','write-modal'].forEach(id => closeModal(id));
   });
 
+  function toggleRecipe(recipeId, oilId) {
+    const detail = document.getElementById(`rc-detail-${recipeId}-${oilId}`);
+    const chev   = document.getElementById(`rc-chev-${recipeId}-${oilId}`);
+    if (!detail) return;
+    const open = detail.style.display === 'none';
+    detail.style.display = open ? 'block' : 'none';
+    if (chev) chev.textContent = open ? '−' : '+';
+  }
+
   return {
-    showPage, openOilDetail, openWriteQA, openQADetail, closeModal,
+    showPage, openOilDetail, openWriteQA, openQADetail, closeModal, toggleRecipe,
     setCat, setTag, filterQAByOil, clearQAFilter,
     likeQuestion, likeAnswer, submitAnswer, submitQuestion,
     doSearch, doOilsSearch, searchSymptom, switchUsageTab, goToQAWithOil, init

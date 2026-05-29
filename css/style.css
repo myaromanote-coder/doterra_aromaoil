@@ -548,6 +548,67 @@ input, textarea, select { font-family:inherit; }
 .caution-box .detail-label { color:#B07820; }
 .caution-box .detail-text { font-size: var(--t-sm); color:#7A5010; }
 
+/* ── 레시피 카드 ──────────────────────────── */
+.recipe-list { display:flex; flex-direction:column; gap:8px; }
+
+.recipe-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-sm); overflow:hidden;
+  cursor:pointer; transition:border-color .15s;
+}
+.recipe-card:hover { border-color:var(--key); }
+
+.recipe-card-top {
+  display:flex; align-items:center; gap:8px;
+  padding:12px 14px;
+}
+.recipe-type-badge {
+  font-size:10px; font-weight:700; letter-spacing:.8px;
+  text-transform:uppercase; padding:3px 8px; border-radius:var(--r-pill);
+  flex-shrink:0;
+}
+.recipe-type-diffuser { background:#EDF6F0; color:#2E7D52; }
+.recipe-type-rollon   { background:#EEF2FF; color:#3949AB; }
+.recipe-type-diy      { background:#FFF8E1; color:#F57F17; }
+.recipe-type-drink    { background:#FCE4EC; color:#C62828; }
+
+.recipe-name { font-size:14px; font-weight:600; color:var(--ink); flex:1; }
+.recipe-chevron {
+  width:24px; height:24px; border-radius:50%;
+  background:var(--bg2); color:var(--ink2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:300; flex-shrink:0;
+  line-height:1;
+}
+
+.recipe-detail {
+  padding:0 14px 14px; border-top:1px solid var(--border2);
+}
+.recipe-ingredients {
+  margin-top:12px; margin-bottom:12px;
+  display:flex; flex-direction:column; gap:6px;
+}
+.recipe-ingredient {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:6px 10px; background:var(--bg); border-radius:6px;
+}
+.ri-name { font-size:13px; font-weight:500; color:var(--ink); }
+.ri-amount { font-size:12px; color:var(--key); font-weight:600; }
+
+.recipe-how { margin-bottom:10px; }
+.recipe-how-label {
+  font-size:10px; font-weight:700; letter-spacing:1.2px;
+  text-transform:uppercase; color:var(--ink3); margin-bottom:6px;
+}
+.recipe-how p { font-size:13px; color:var(--ink2); line-height:1.7; }
+
+.recipe-benefits { display:flex; flex-wrap:wrap; gap:5px; }
+.recipe-benefit-tag {
+  font-size:11px; color:var(--key);
+  background:var(--key-lt); border-radius:var(--r-pill);
+  padding:3px 9px;
+}
+
 .qa-link-btn {
   width:100%; padding:13px;
   background:var(--key-lt); color:var(--key);
