@@ -467,7 +467,7 @@ const OILS_DATA = [
     tags: ["명상", "피부수분", "노화방지", "감정안정", "영적"]
   },
   {
-    id: 30, nameKr: "몰약", nameEn: "Myrrh", category: "single", plantType: "resin", productImage: "images/oils/myrrh.jpg", plantImageUrl: "images/plants/myrrh.jpg",
+    id: 30, nameKr: "미르", nameEn: "Myrrh", category: "single", plantType: "resin", productImage: "images/oils/myrrh.jpg", plantImageUrl: "images/plants/myrrh.jpg",
     color: "#8B4513", emoji: "🌳",
     origin: "소말리아, 에티오피아", extraction: "수증기 증류", plant: "수지",
     scent: "우디, 스모키, 약초향",
@@ -483,7 +483,7 @@ const OILS_DATA = [
     tags: ["피부치유", "항산화", "갑상선", "구강건강", "명상"]
   },
   {
-    id: 31, nameKr: "터메릭", nameEn: "Turmeric", category: "single", plantType: "root", productImage: "images/oils/turmeric.jpg", plantImageUrl: "images/plants/turmeric.jpg",
+    id: 31, nameKr: "투메릭", nameEn: "Turmeric", category: "single", plantType: "root", productImage: "images/oils/turmeric.jpg", plantImageUrl: "images/plants/turmeric.jpg",
     color: "#F5A623", emoji: "🌿",
     origin: "인도", extraction: "수증기 증류", plant: "뿌리",
     scent: "따뜻한, 향신료, 흙냄새",
@@ -531,7 +531,7 @@ const OILS_DATA = [
     tags: ["기분전환", "에너지", "피로회복", "세정", "시트러스"]
   },
   {
-    id: 34, nameKr: "그레이프프루트", nameEn: "Grapefruit", category: "single", plantType: "citrus", productImage: "images/oils/grapefruit.jpg", plantImageUrl: "images/plants/grapefruit.jpg",
+    id: 34, nameKr: "자몽", nameEn: "Grapefruit", category: "single", plantType: "citrus", productImage: "images/oils/grapefruit.jpg", plantImageUrl: "images/plants/grapefruit.jpg",
     color: "#FF69B4", emoji: "🍇",
     origin: "미국", extraction: "냉압착", plant: "껍질",
     scent: "상큼한, 쌉쌀한, 시트러스",
@@ -563,7 +563,7 @@ const OILS_DATA = [
     tags: ["에너지", "근육통", "방충제", "정화", "소화"]
   },
   {
-    id: 36, nameKr: "제라늄", nameEn: "Geranium", category: "single", plantType: "flower", productImage: "images/oils/geranium.jpg", plantImageUrl: "images/plants/geranium.jpg",
+    id: 36, nameKr: "로즈제라늄", nameEn: "Geranium", category: "single", plantType: "flower", productImage: "images/oils/geranium.jpg", plantImageUrl: "images/plants/geranium.jpg",
     color: "#E8A0C0", emoji: "🌸",
     origin: "이집트", extraction: "수증기 증류", plant: "잎/줄기",
     scent: "플로럴, 로즈향, 청량한",
@@ -870,7 +870,7 @@ const OILS_DATA = [
     tags: ["여드름", "피부정화", "모공", "피지조절", "트러블"]
   },
   {
-    id: 116, nameKr: "이모탈", nameEn: "Immortelle", category: "blend", plantType: "blend", productImage: "images/oils/immortelle.jpg",
+    id: 116, nameKr: "살루벨", nameEn: "Immortelle", category: "blend", plantType: "blend", productImage: "images/oils/immortelle.jpg",
     color: "#FFD700", emoji: "👑",
     origin: "블렌드", extraction: "블렌드", plant: "복합",
     scent: "플로럴, 우디, 허브",
