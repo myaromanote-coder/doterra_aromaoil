@@ -196,12 +196,12 @@ input, textarea, select { font-family:inherit; }
 }
 .ood-card:hover { box-shadow:var(--sh); transform:translateY(-1px); }
 .ood-img-wrap {
-  width:156px; height:156px; flex-shrink:0;
+  width:120px; height:120px; flex-shrink:0;
   background:var(--key-lt);
   display:flex; align-items:center; justify-content:center;
 }
 .ood-product-img {
-  width:148px; height:148px;
+  width:112px; height:112px;
   object-fit:contain; mix-blend-mode:multiply;
 }
 .ood-info { flex:1; padding: var(--sp-3) var(--sp-3); }
@@ -248,19 +248,19 @@ input, textarea, select { font-family:inherit; }
 .featured-scroll::-webkit-scrollbar { display:none; }
 
 .featured-card {
-  flex-shrink:0; width:98px; background:var(--surface);
+  flex-shrink:0; width:100px; background:var(--surface);
   border-radius:var(--r); overflow:hidden; cursor:pointer;
   border:1px solid var(--border); box-shadow:var(--sh-xs);
   transition: transform .2s, box-shadow .2s;
 }
 .featured-card:hover { transform:translateY(-2px); box-shadow:var(--sh); }
 .feat-img-wrap {
-  width:100%; height:168px;
+  width:100%; height:100px;       /* 정사각형 */
   background:var(--key-lt);
   display:flex; align-items:center; justify-content:center;
 }
 .feat-product-img {
-  width:98px; height:164px;
+  width:94px; height:96px;        /* 박스 거의 꽉 채움 */
   object-fit:contain; mix-blend-mode:multiply;
   transition:transform .25s;
 }
