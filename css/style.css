@@ -196,12 +196,12 @@ input, textarea, select { font-family:inherit; }
 }
 .ood-card:hover { box-shadow:var(--sh); transform:translateY(-1px); }
 .ood-img-wrap {
-  width:96px; height:96px; flex-shrink:0;
+  width:120px; height:120px; flex-shrink:0;
   background:var(--key-lt);
   display:flex; align-items:center; justify-content:center;
 }
 .ood-product-img {
-  width:86px; height:86px;
+  width:112px; height:112px;
   object-fit:contain; mix-blend-mode:multiply;
 }
 .ood-info { flex:1; padding: var(--sp-3) var(--sp-3); }
@@ -255,12 +255,12 @@ input, textarea, select { font-family:inherit; }
 }
 .featured-card:hover { transform:translateY(-2px); box-shadow:var(--sh); }
 .feat-img-wrap {
-  width:100%; height:108px;
+  width:100%; height:130px;
   background:var(--key-lt);
   display:flex; align-items:center; justify-content:center;
 }
 .feat-product-img {
-  width:88px; height:104px;
+  width:96px; height:126px;
   object-fit:contain; mix-blend-mode:multiply;
   transition:transform .25s;
 }
